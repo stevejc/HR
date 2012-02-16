@@ -1,4 +1,8 @@
 Hr::Application.routes.draw do
+  resources :myvendors
+
+  resources :users
+
   resources :vendors
 
   # The priority is based upon order of creation:

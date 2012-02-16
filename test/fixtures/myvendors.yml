@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fav: false
+  use: false
+  nouse: false
+  comments: MyText
+  user_id: 1
+  vendor_id: 1
+
+two:
+  fav: false
+  use: false
+  nouse: false
+  comments: MyText
+  user_id: 1
+  vendor_id: 1
