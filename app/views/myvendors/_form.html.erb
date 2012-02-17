@@ -29,11 +29,12 @@
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :full_name %>
   </div>
   <div class="field">
     <%= f.label :vendor_id %><br />
-    <%= f.text_field :vendor_id %>
+    <!-- <%= f.text_field :vendor_id %> -->
+    <%= f.collection_select :vendor_id, Vendor.all, :id, :vendor_name %>
   </div>
   <div class="actions">
     <%= f.submit %>

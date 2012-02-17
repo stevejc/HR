@@ -29,8 +29,7 @@
   <b>My Vendors:</b>
   <ol>
 	<% @user.vendors.each do |myv| %>
-	  <li><%= myv.id%>|<%= myv.vendor_name %>
-		<span><%= myv.myvendors[0].fav%></span><li>
+	  <li><%= myv.id%>|<%= link_to myv.vendor_name, Myvendor %></li>
 	<% end %>
   </ol>
 </p>

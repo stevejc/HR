@@ -1,4 +1,5 @@
 class MyvendorsController < ApplicationController
+ 
   # GET /myvendors
   # GET /myvendors.xml
   def index
