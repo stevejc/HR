@@ -7,6 +7,22 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header>
+  	<div class= "nav">
+  	  <ul>
+  	  	<li><%= link_to "Home", root_path %></li>
+  	  	<li><%= link_to "About", about_path %></li>
+  	  	<li><%= link_to "Contact", contact_path %></li>
+        <% if current_user%>
+           Welcome <%= current_user.full_name %>
+  	  	   <li><%= link_to "Sign out", signout_path %></li>           
+        <% else %>
+  	  	   <li><%= link_to "Sign in with Linkedin", '/auth/linkedin' %></li>
+        <% end %>
+  	  </ul>
+  	</div><!-- end .nav -->  
+  </header>	
+
 
 <%= yield %>
 

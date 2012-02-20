@@ -1,4 +1,10 @@
 Hr::Application.routes.draw do
+  match '/about',   :to => 'pages#about'
+  match '/contact', :to => 'pages#contact'
+  root              :to => 'pages#home'
+  match '/auth/linkedin/callback', :to => 'sessions#create'
+  match '/signout' => 'sessions#destroy', :as => :signout
+  
   resources :myvendors
 
   resources :users
