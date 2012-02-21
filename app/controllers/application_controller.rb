@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   
+  def require_signed_in
+    deny_access unless current_user
+  end
+  
   def deny_access
-    redirect_to root_path
+    redirect_to signin_path
   end
   
 end

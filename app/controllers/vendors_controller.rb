@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
-  # GET /vendors
-  # GET /vendors.xml
+  before_filter :require_signed_in
+
   def index
     @vendors = Vendor.all
 

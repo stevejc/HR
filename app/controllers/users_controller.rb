@@ -88,7 +88,5 @@ class UsersController < ApplicationController
       deny_access unless User.find(params[:id]) === current_user
     end
     
-    def require_signed_in
-      deny_access unless current_user
-    end
+
 end
