@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.xml
+  before_filter :require_current_user, :except => [:index]
+  before_filter :require_signed_in, :only => [:index]
+
   def index
     @users = User.all
 
@@ -80,4 +81,14 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+    def require_current_user
+      deny_access unless User.find(params[:id]) === current_user
+    end
+    
+    def require_signed_in
+      deny_access unless current_user
+    end
 end
