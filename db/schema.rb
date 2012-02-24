@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219192716) do
+ActiveRecord::Schema.define(:version => 20120223185524) do
 
   create_table "myvendors", :force => true do |t|
     t.boolean  "fav"
@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(:version => 20120219192716) do
     t.string   "url_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
 end

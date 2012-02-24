@@ -6,6 +6,7 @@ Hr::Application.routes.draw do
   root              :to => 'pages#home'
   match '/auth/linkedin/callback', :to => 'sessions#create'
   match '/signout' => 'sessions#destroy', :as => :signout
+  match '/users/:id/home', :to => 'users#home'
   
   resources :myvendors
 

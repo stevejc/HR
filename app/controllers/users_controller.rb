@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_filter :require_current_user, :except => [:index]
   before_filter :require_signed_in, :only => [:index]
 
+  def home
+    @user = current_user
+  end
+
+
   def index
     @users = User.all
 
