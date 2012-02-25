@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_current_user, :except => [:index]
-  before_filter :require_signed_in, :only => [:index]
+  before_filter :require_current_user, :except => [:index, :destroy]
+  before_filter :require_admin, :only => [:index, :destroy]
 
   def home
     @user = current_user
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   private
   
     def require_current_user
-      deny_access unless User.find(params[:id]) === current_user
+      deny_access unless (User.find(params[:id]) === current_user) || current_user.admin
     end
     
 

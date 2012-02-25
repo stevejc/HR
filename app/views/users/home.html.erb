@@ -4,6 +4,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @user.picture, :id => "pic", :size => "110x110" %><br>
   <%= @user.full_name %><br>
   <%= link_to 'View profile', @user %><br>
   <%= link_to 'Edit profile', edit_user_path(@user) %>

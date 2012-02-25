@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120223185524) do
+ActiveRecord::Schema.define(:version => 20120224191429) do
 
   create_table "myvendors", :force => true do |t|
     t.boolean  "fav"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20120223185524) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "admin"
+    t.string   "image"
   end
 
   create_table "vendors", :force => true do |t|
