@@ -1,6 +1,11 @@
 class VendorsController < ApplicationController
   before_filter :require_admin
 
+  def display_vendors
+    @vendors = Vendor.order(:vendor_name).where("name like ?", "%#{params[:term]}%")
+    render json: @vendors.map(&:vendor_name)
+  end
+  
   def index
     @vendors = Vendor.all
 

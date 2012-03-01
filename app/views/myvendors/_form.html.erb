@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :vendor_choose %><br />
-    <%= autocomplete_field :vendor_choose %>
+    <%= f.text_field :vendor_choose, data: {autocomplete_source: Vendor.order(:vendor_name).map(&:vendor_name)} %>
   </div>
   <div class="actions">
     <%= f.submit %>
