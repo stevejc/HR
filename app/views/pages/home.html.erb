@@ -3,7 +3,6 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <% if current_user %>
-  <p id="notice"><%= notice %></p>
 
 	<p>
 	  <%= image_tag current_user.picture, :id => "pic", :size => "110x110" %><br>
@@ -22,6 +21,7 @@
 	    <li><%= link_to 'Timekeeping', '#' %></li>	
 	  </ol>
 	</p>
+	
 
 	<h3>Top Tips</h3>
 	<h5>Promote from within</h5>
@@ -38,3 +38,6 @@
 
   <% else %>
 <% end %> 
+
+
+

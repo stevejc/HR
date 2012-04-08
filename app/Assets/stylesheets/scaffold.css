@@ -1,4 +1,93 @@
-body { background-color: #fff; color: #333; }
+/* Basic structure elements
+------------------------------------------------------------------------------*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: veranda, sans-serif;
+	font-size: 100%;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+/* Header
+------------------------------------------------------------------------------*/
+
+#header {
+	height: 100px;
+	width: auto;
+	border: dashed red;
+	background: red;
+}
+
+#headerwrapper {
+	width: 100%;
+	max-width: 960px;
+	height: auto;
+	padding: 5px;
+	margin: auto;
+	border: dashed green;
+}
+
+#logo {
+	float: left;
+}
+
+#logo h1 a {
+	font-size: 1.2em;
+	margin-top:30px;
+	padding: 0;
+	text-decoration: none;
+	color: #FFF;
+}
+
+#headnav {
+	list-style: none;
+	padding: 10px 0;
+	float: right;
+	margin: 0;
+}
+
+#headnav ul {
+	float: left;
+	background: #395e64;
+}
+
+#headnav li {
+	float: left;
+	margin-right: 10px;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#headnav a {
+	color: #FFF;
+    text-decoration: none;
+}
+
+#headnav a:hover {
+	color: blue;
+}
+
+/* Main Content
+------------------------------------------------------------------------------*/
+
+#main {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	background: orange;
+	padding: 0;
+	border: dashed black;
+}
+
+
+
+
+/** body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -20,8 +109,16 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
+**/
+
 #notice {
-  color: green;
+  width: 95%;
+  height: 30px;
+  margin: auto;
+  color: white;
+  background: green;
+  border-radius: 5px;
+  border: solid black;
 }
 
 .field_with_errors {
@@ -54,3 +151,5 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+

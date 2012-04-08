@@ -2,17 +2,29 @@ class VendorsController < ApplicationController
   before_filter :require_admin
 
   def display_vendors
-    @vendors = Vendor.order(:vendor_name).where("name like ?", "%#{params[:term]}%")
+    @vendors = Vendor.order(:vendor_name).where("vendor_name like ?", "%#{params[:term]}%")
     render json: @vendors.map(&:vendor_name)
   end
   
-  def index
-    @vendors = Vendor.all
+  def list
+
+    @vendors = Vendor.order('vendor_name ASC').all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # list.html.erb
       format.xml  { render :xml => @vendors }
     end
+  end
+  
+  def index
+    @vendors = Vendor.order(:vendor_name).where("vendor_name like ?", "%#{params[:term]}%")
+    render json: @vendors.map(&:vendor_name)
+    # @vendors = Vendor.all
+
+    # respond_to do |format|
+      # format.html # index.html.erb
+      # format.xml  { render :xml => @vendors }
+    # end
   end
 
   # GET /vendors/1

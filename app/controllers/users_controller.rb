@@ -89,7 +89,7 @@ class UsersController < ApplicationController
   
   private
   
-    def require_current_user
+    def require_current_user   #is this needed?
       deny_access unless (User.find(params[:id]) === current_user) || current_user.admin
     end
     
