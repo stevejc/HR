@@ -7,9 +7,10 @@
 	<p>
 	  <%= image_tag current_user.picture, :id => "pic", :size => "110x110" %><br>
 	  <%= current_user.full_name %><br>
-	  <%= link_to 'View profile', current_user %><br>
-	  <%= link_to 'Edit profile', edit_user_path(current_user) %>
 	</p>
+	
+	<%# render @myvendor %>
+	<%= render 'myvendors/form' %>
 
 	<p>
 	  <h3>Top Recommendations</h3>
@@ -22,6 +23,18 @@
 	  </ol>
 	</p>
 	
+	<p>
+		<% 3.times do %>
+		  <% size = (@vendors.length) - 1%>
+		  <% random_num = rand(0..size)%>
+		  <div class="vendor_display">
+		    <%= image_tag @vendors[random_num].logo.url(:small) %><br/>
+		    <%= @vendors[random_num].vendor_name %><br/>
+		    <%= simple_format(@vendors[random_num].description) %><br/>
+		  </div>
+		<% end %>
+	</p>
+	<div style="clear: both;"></div>
 
 	<h3>Top Tips</h3>
 	<h5>Promote from within</h5>

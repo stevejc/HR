@@ -1,4 +1,26 @@
 <h1>Pages#signup</h1>
 <p>Find me in app/views/pages/signup.html.erb</p>
 <p>Join now</p>
+
+Email:<br/>
+<%= text_field_tag "email" %>
+<%= params[:email] %>
+
+
+<%= form_for(@user) do |f| %>
+
+<%= error_messages_for(@user) %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+<%= @user.email %>
+  <div class="actions">
+    <%= f.submit "Sign-Up with Linkedin"%>
+  </div>
+<% end %>
+
+
 <%= link_to "Sign in with Linkedin", '/auth/linkedin' %>

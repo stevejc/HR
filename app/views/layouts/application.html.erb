@@ -19,8 +19,15 @@
   	  	<li><a href="/about">About</a></li>
   	  	<li><a href="/contact">Contact</a></li>
         <% if current_user%>
-           <li><a href= "#">Welcome <%= current_user.full_name %></a> </li>
-  	  	   <li><%= link_to "Sign out", signout_path %></li>           
+           <li>
+	         <a href= "#">Welcome <%= current_user.full_name %></a>
+	         <ul> 
+			   <li><%= link_to 'View profile', current_user %></li>
+			   <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
+			   <li><%= link_to "Sign out", signout_path %></li>
+		     </ul>
+	       </li>
+  	  	   <!--  <li><%= link_to "Sign out", signout_path %></li> -->           
         <% else %>
   	  	   <li><%= link_to "Sign in with Linkedin", '/auth/linkedin' %></li>
         <% end %>

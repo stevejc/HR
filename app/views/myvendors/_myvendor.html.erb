@@ -1,0 +1,28 @@
+<%= form_for(@myvendor) do |f| %>
+
+<%= error_messages_for(@myvendor) %>
+
+  <div class="field">
+    <%= f.label :fav, "Favorite" %><br />
+    <%= f.check_box :fav %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br />
+    <%= f.check_box :use %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.collection_select :user_id, User.all, :id, :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label :vendor_choose %><br />
+    <%= f.text_field :vendor_choose, data: {autocomplete_source: vendors_path } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
